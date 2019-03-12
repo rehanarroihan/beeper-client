@@ -1,10 +1,10 @@
 <template>
-    <h1>Holla from hellovue</h1>
+    <h1>404: You're Lost</h1>
 </template>
 
 <script>
 export default {
-    name: 'Holla'    
+    name: '404'
 }
 </script>
 

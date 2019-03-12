@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from './components/Hello.vue'
-import Holla from './components/Holla.vue'
+
+import Auth from './components/auth/Auth.vue';
+import Login from './components/auth/Login.vue';
+import Register from './components/auth/Register.vue';
 
 Vue.use(Router)
 
@@ -10,14 +12,21 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/helo',
-      name: 'helo',
-      component: Hello
+      path: '/auth',
+      name: 'auth',
+      component: Auth,
+      children: [
+        {
+          path: 'login',
+          name: 'login',
+          component: Login,
+        },
+        {
+          path: 'register',
+          name: 'register',
+          component: Register,
+        },
+      ],
     },
-    {
-      path: '/hola',
-      name: 'hola',
-      component: Holla
-    }
-  ]
+  ],
 })
