@@ -2,14 +2,18 @@
     <div>
         <h3 class="text-center">Login</h3>
 
-        <input type="text" class="form-control" placeholder="Username">
-        <input type="password" class="form-control" placeholder="Password">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password">
+        </div>
 
         <hr>
 
         <button class="btn btn-lg btn-primary btn-block">Register</button>
 
-        <p class="text-center">
+        <p class="text-center m-t-20">
             Dont have account ? <router-link to="/auth/register">Register</router-link>
         </p>
     </div>

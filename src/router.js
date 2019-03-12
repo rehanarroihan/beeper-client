@@ -14,6 +14,7 @@ export default new Router({
     {
       path: '/auth',
       name: 'auth',
+      redirect: '/auth/login',
       component: Auth,
       children: [
         {

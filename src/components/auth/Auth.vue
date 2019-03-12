@@ -17,6 +17,16 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+    #auth {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .authForm {
+        background: #ffffff;
+        padding-bottom: 15px;
+        padding-top: 10px;
+        border-radius: 10px;
+    }
 </style>
