@@ -32,8 +32,11 @@ export default {
     },
     methods: {
         login() {
-            axios.post(`http://${process.env.VUE_APP_API_BASE_URL}/auth`, this.user).then(function(data) {
-                alertify.success("Login successful!");
+            axios.post(`http://${process.env.VUE_APP_API_BASE_URL}/auth`, this.user).then(function(response) {
+                if(response.status == 200) {
+                    this.$auth.setToken(response.data.token, Date.now() + 14400000);
+                    this.$router.push('/home');
+                }
             }).catch(function(err) {
                 if(err.response.status == 422) {
                     err.response.data.errors.forEach(function(e) {
