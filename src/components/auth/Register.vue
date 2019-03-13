@@ -38,13 +38,14 @@ export default {
     },
     methods: {
         register() {
+            const self = this;
             const {email, username, password} = this.user;
             axios.post(`http://${process.env.VUE_APP_API_BASE_URL}/users`, {
                 username,
                 email,
                 password
             }).then(function(data) {
-                this.$router.push('/auth/login');
+                self.$router.push('/auth/login');
                 alertify.success("Registration successful!");
             }).catch(function(err) {
                 if(err.response.status == 422) {

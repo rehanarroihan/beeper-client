@@ -32,12 +32,14 @@ export default {
     },
     methods: {
         login() {
+            const self = this;
             axios.post(`http://${process.env.VUE_APP_API_BASE_URL}/auth`, this.user).then(function(response) {
                 if(response.status == 200) {
-                    this.$auth.setToken(response.data.token, Date.now() + 14400000);
-                    this.$router.push('/home');
+                    self.$auth.setToken(response.data.token, Date.now() + 14400000);
+                    self.$router.push('/home');
                 }
             }).catch(function(err) {
+                console.log('here', err);
                 if(err.response.status == 422) {
                     err.response.data.errors.forEach(function(e) {
                         alertify.error(e);

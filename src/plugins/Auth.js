@@ -1,4 +1,4 @@
-let AuthPlugin = {
+var AuthPlugin = {
     setToken: function(token, expiration) {
         localStorage.setItem('authToken', token);
         localStorage.setItem('authTokenExpiration', expiration);

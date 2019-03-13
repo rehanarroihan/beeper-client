@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import Auth from './plugins/Auth';
+import CustomAuth from './plugins/Auth.js';
 
-Vue.config.productionTip = false
+Vue.use(CustomAuth);
+
+Vue.config.productionTip = false;
 alertify.defaults.notifier.position = 'top-right';
-Vue.use(Auth);
 
 new Vue({
   router,
