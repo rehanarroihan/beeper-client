@@ -39,9 +39,9 @@ export default {
     methods: {
         register() {
             const {email, username, password} = this.user;
-            axios.post("http://localhost:9090/users", {
-                username, 
-                email, 
+            axios.post(`http://${process.env.VUE_APP_API_BASE_URL}/users`, {
+                username,
+                email,
                 password
             }).then(function(data) {
                 this.$router.push('/auth/login');

@@ -5,6 +5,8 @@ import Auth from './components/auth/Auth.vue';
 import Login from './components/auth/Login.vue';
 import Register from './components/auth/Register.vue';
 
+import NotFound from './components/Page404.vue';
+
 Vue.use(Router)
 
 export default new Router({
@@ -29,5 +31,9 @@ export default new Router({
         },
       ],
     },
+    {
+      path: "*",
+      component: NotFound
+    }
   ],
 })
