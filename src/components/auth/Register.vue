@@ -43,7 +43,16 @@ export default {
                 username, 
                 email, 
                 password
-            }).then(data => console.log(data)).catch(err => console.log(err.code));
+            }).then(function(data) {
+                this.$router.push('/auth/login');
+                alertify.success("Registration successful!");
+            }).catch(function(err) {
+                if(err.response.status == 422) {
+                    err.response.data.errors.forEach(function(e) {
+                        alertify.error(e);
+                    });
+                }
+            }); 
         },
     },
 }

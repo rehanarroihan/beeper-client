@@ -11,7 +11,7 @@
 
         <hr>
 
-        <button class="btn btn-lg btn-primary btn-block">Register</button>
+        <button class="btn btn-lg btn-primary btn-block">Login</button>
 
         <p class="text-center m-t-20">
             Dont have account ? <router-link to="/auth/register">Register</router-link>
