@@ -8,10 +8,10 @@ var AuthPlugin = {
         localStorage.removeItem('authTokenExpiration');
     },
     getToken: function() {
-        const token = localStorage.getItem('authToekn');
+        const token = localStorage.getItem('authToken');
         const expiration = localStorage.getItem('authTokenExpiration');
 
-        if (!token || expiration) {
+        if (token == null || expiration == null) {
             return null;
         }
         if (Date.now() > parseInt(expiration)) {

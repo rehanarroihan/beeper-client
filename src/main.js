@@ -11,9 +11,7 @@ alertify.defaults.notifier.position = 'top-right';
 //route guard
 router.beforeEach(function(to, from, next) {
   if(to.matched.some(function(record) { return record.meta.requireGuest }) && Vue.auth.loggedIn()) {
-    next({
-      path: '/home'
-    });
+    next({ path: '/home' })
   } else {
     next();
   }

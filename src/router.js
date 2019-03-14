@@ -36,10 +36,10 @@ export default new Router({
       ],
     },
     {
-      path: "/home",
-      component: NotFound,
-      components: Home
-    }
+      path: '/home',
+      name: 'home',
+      component: Home
+    },
     {
       path: "*",
       component: NotFound
